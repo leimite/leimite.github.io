@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="邵金东的个人博客" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="项目运行123456789$ git clone https://github.com/jusfoun-FE/automation-development-ie8.git$ cd automation-development-ie8$ npm install$ npm run dev //用于开发环境$ npm run build //用于生产环境 浏览器输入地址查看模板：http://local">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基于Gulp的前端开发模版">
+<meta property="og:url" content="http://yoursite.com/2018/04/03/解决兼容/index.html">
+<meta property="og:site_name" content="邵金东的个人博客">
+<meta property="og:description" content="项目运行123456789$ git clone https://github.com/jusfoun-FE/automation-development-ie8.git$ cd automation-development-ie8$ npm install$ npm run dev //用于开发环境$ npm run build //用于生产环境 浏览器输入地址查看模板：http://local">
+<meta property="og:updated_time" content="2018-04-03T09:13:33.096Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="基于Gulp的前端开发模版">
+<meta name="twitter:description" content="项目运行123456789$ git clone https://github.com/jusfoun-FE/automation-development-ie8.git$ cd automation-development-ie8$ npm install$ npm run dev //用于开发环境$ npm run build //用于生产环境 浏览器输入地址查看模板：http://local">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/04/03/解决兼容/"/>
+
+
+
+
+
+  <title>基于Gulp的前端开发模版 | 邵金东的个人博客</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+    <a href="https://github.com/leimite"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">邵金东的个人博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">感谢关注</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/03/解决兼容/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="邵金东">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="邵金东的个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">基于Gulp的前端开发模版</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-03T17:14:12+08:00">
+                2018-04-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><strong>项目运行</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">$ git clone https:<span class="comment">//github.com/jusfoun-FE/automation-development-ie8.git</span></div><div class="line"></div><div class="line">$ cd automation-development-ie8</div><div class="line"></div><div class="line">$ npm install</div><div class="line"></div><div class="line">$ npm run dev <span class="comment">//用于开发环境</span></div><div class="line"></div><div class="line">$ npm run build <span class="comment">//用于生产环境</span></div></pre></td></tr></table></figure></p>
+<p>浏览器输入地址查看模板：<a href="http://localhost:3000/html/index/" target="_blank" rel="external">http://localhost:3000/html/index/</a></p>
+<h3 id="项目目录结构"><a href="#项目目录结构" class="headerlink" title="项目目录结构"></a>项目目录结构</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">.</div><div class="line">├─ build/               # gulp 任务配置目录</div><div class="line">├─ dist/                # build 生成的生产环境下的项目</div><div class="line">├─ src/                 # 源码目录（开发都在这里进行）</div><div class="line">│   ├── components/     # 组件（COMPONENT）</div><div class="line">│   ├── html/           # 页面级html</div><div class="line">│   ├── css/            # css文件存放目录（less ,scss,css）</div><div class="line">│   ├── js/             # js文件存放目录</div><div class="line">│   ├── images/         # 图片文件</div><div class="line">├── .babelrc            # Babel 转码配置</div><div class="line">├── .gitignore          # （配置）需被 Git 忽略的文件（夹）</div><div class="line">├── gulpfile.js         #   gulpfile基础配置文件</div><div class="line">├── package.json        # （这个就不用多解释了吧）</div></pre></td></tr></table></figure>
+<h3 id="IE低版本兼容小贴士"><a href="#IE低版本兼容小贴士" class="headerlink" title="IE低版本兼容小贴士"></a>IE低版本兼容小贴士</h3><h4 id="IE浏览器hack"><a href="#IE浏览器hack" class="headerlink" title="IE浏览器hack"></a>IE浏览器hack</h4><p>html:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!--[if IE]&gt;</span></div><div class="line">这段文字只在IE浏览器显示</div><div class="line">&lt;![endif]--&gt;</div><div class="line"></div><div class="line">只在IE6下生效</div><div class="line"><span class="comment">&lt;!--[if IE 6]&gt;</span></div><div class="line">这段文字只在IE6浏览器显示</div><div class="line">&lt;![endif]--&gt;</div><div class="line"></div><div class="line">只在IE6以上版本生效</div><div class="line"><span class="comment">&lt;!--[if gte IE 6]&gt;</span></div><div class="line">这段文字只在IE6以上(包括)版本IE浏览器显示</div><div class="line">&lt;![endif]--&gt;</div><div class="line"></div><div class="line">只在IE8上不生效</div><div class="line"><span class="comment">&lt;!--[if ! IE 8]&gt;</span></div><div class="line">这段文字在非IE8浏览器显示</div><div class="line">&lt;![endif]--&gt;</div><div class="line"></div><div class="line">非IE浏览器生效</div><div class="line"><span class="comment">&lt;!--[if !IE]&gt;</span></div><div class="line">这段文字只在非IE浏览器显示</div><div class="line">&lt;![endif]--&gt;</div></pre></td></tr></table></figure></p>
+<p>css:<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">“-″减号是IE6专有的hack</div><div class="line">“\9″ IE6/IE7/IE8/IE9/IE10都生效</div><div class="line">“\0″ IE8/IE9/IE10都生效，是IE8/9/10的hack</div><div class="line">“\9\0″ 只对IE9/IE10生效，是IE9/10的hack</div><div class="line">.hack&#123;</div><div class="line">/*demo1 注意顺序，否则IE6/7下可能无法正确显示，导致结果显示为白色背景*/</div><div class="line">    background-color:red; /* All browsers */</div><div class="line">    background-color:blue !important;/* All browsers but IE6 */</div><div class="line">    *background-color:black; /* IE6, IE7 */</div><div class="line">    +background-color:yellow;/* IE6, IE7*/</div><div class="line">    background-color:gray\9; /* IE6, IE7, IE8, IE9, IE10 */</div><div class="line">    background-color:purple\0; /* IE8, IE9, IE10 */</div><div class="line">    background-color:orange\9\0;/*IE9, IE10*/</div><div class="line">    _background-color:green; /* Only works in IE6 */</div><div class="line">    *+background-color:pink; /*  WARNING: Only works in IE7 ? Is it right? */</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="1、IE8及以下，布局问题"><a href="#1、IE8及以下，布局问题" class="headerlink" title="1、IE8及以下，布局问题"></a>1、IE8及以下，布局问题</h4><p>不使用flex，box-size:border-box，calc</p>
+<h4 id="2、ie下进行跨域请求解决方案"><a href="#2、ie下进行跨域请求解决方案" class="headerlink" title="2、ie下进行跨域请求解决方案"></a>2、ie下进行跨域请求解决方案</h4><p>引入jquery.xdomainrequest.min.js</p>
+<h4 id="3、ie8-9-进行跨域post请求，参数无法传递解决办法"><a href="#3、ie8-9-进行跨域post请求，参数无法传递解决办法" class="headerlink" title="3、ie8,9 进行跨域post请求，参数无法传递解决办法"></a>3、ie8,9 进行跨域post请求，参数无法传递解决办法</h4><p>jquery的ajax方法添加<br>crossDomain: true == !(document.all)<br>例如：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">$.ajax(&#123;</div><div class="line">    <span class="attr">url</span>: url,</div><div class="line">    <span class="attr">type</span>: <span class="string">'POST'</span>,</div><div class="line">    <span class="attr">data</span>: params,</div><div class="line">    <span class="attr">dataType</span>: <span class="string">'json'</span>,</div><div class="line">    <span class="attr">contentType</span>: <span class="string">"application/json"</span>,</div><div class="line">    <span class="attr">crossDomain</span>: <span class="literal">true</span> == !(<span class="built_in">document</span>.all),</div><div class="line">    <span class="attr">success</span>: <span class="function"><span class="keyword">function</span> (<span class="params">res</span>) </span>&#123;</div><div class="line">      ...</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">error</span>: <span class="function"><span class="keyword">function</span> (<span class="params">err</span>) </span>&#123;</div><div class="line">      ...</div><div class="line">    &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<h4 id="4、IE6-IE7下overflow：hidden无效"><a href="#4、IE6-IE7下overflow：hidden无效" class="headerlink" title="4、IE6,IE7下overflow：hidden无效"></a>4、IE6,IE7下overflow：hidden无效</h4><p>解决办法：position:relative; 或者 <em>position:relative; /</em> for IE6,IE7 */ 即可解决该bug。<br><br>既：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">position</span>: <span class="selector-tag">relative</span>;</div><div class="line"><span class="selector-tag">overflow</span>: <span class="selector-tag">hidden</span>;</div></pre></td></tr></table></figure></p>
+<h4 id="5、css3选择器兼容问题？"><a href="#5、css3选择器兼容问题？" class="headerlink" title="5、css3选择器兼容问题？"></a>5、css3选择器兼容问题？</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">!-</span> <span class="attr">-</span>[<span class="attr">if</span> (<span class="attr">gte</span> <span class="attr">IE</span> <span class="attr">6</span>)&amp;(<span class="attr">lte</span> <span class="attr">IE</span> <span class="attr">8</span>)]&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"./js/common/nwmatcher.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"./js/common/selectivizr-min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">![endif]-</span> <span class="attr">-</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>在非必不可得到情况下不建议使用，会引起页面卡顿</p>
+<h4 id="6、兼容IE8不直接使用sessionStorage-localStorage"><a href="#6、兼容IE8不直接使用sessionStorage-localStorage" class="headerlink" title="6、兼容IE8不直接使用sessionStorage,localStorage"></a>6、兼容IE8不直接使用sessionStorage,localStorage</h4><p>使用公用方法，使用办法如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">setKeyItem</span>(<span class="params">key,value</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (<span class="built_in">window</span>.sessionStorage)&#123;</div><div class="line">      sessionStorage.setItem(key,value);</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">      setCookie(key,value,TimeoutCookie)</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="7、“JSON”未定义"><a href="#7、“JSON”未定义" class="headerlink" title="7、“JSON”未定义"></a>7、“JSON”未定义</h4><p>引入json2.js<br><br>注：本模板已经引入<br><br>下载地址：<a href="https://github.com/douglascrockford/JSON-js" target="_blank" rel="external">https://github.com/douglascrockford/JSON-js</a></p>
+<h4 id="8、IE跨域下出现-“readyState”-0-”status”-0-”TypeError”…"><a href="#8、IE跨域下出现-“readyState”-0-”status”-0-”TypeError”…" class="headerlink" title="8、IE跨域下出现{“readyState”:0,”status”:0,”TypeError”…}"></a>8、IE跨域下出现{“readyState”:0,”status”:0,”TypeError”…}</h4><p>对浏览器进行设置 工具-&gt;Internet选项-&gt;安全-&gt;自定义级别-&gt;其他-&gt;通过域访问数据源-&gt;启用</p>
+<h4 id="9、透明度兼容性："><a href="#9、透明度兼容性：" class="headerlink" title="9、透明度兼容性："></a>9、透明度兼容性：</h4><p>a、使用rgba背景色做透明的：<br><br>背景色变成：background: #000 \9;<br><br>再加IE9及以下的透明度设置方法<br><br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">opacity=80</div><div class="line">-ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);</div><div class="line">filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);</div></pre></td></tr></table></figure></p>
+<p>b、直接使用opacity设置透明度的<br><br>添加IE9及以下的透明度设置方法<br><br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">opacity=80</div><div class="line">-ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);</div><div class="line">filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);</div></pre></td></tr></table></figure></p>
+<h4 id="10、输入框垂直居中问题"><a href="#10、输入框垂直居中问题" class="headerlink" title="10、输入框垂直居中问题"></a>10、输入框垂直居中问题</h4><p>将line-height设置成和height一样 即可,如：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">innput</span><span class="selector-class">.txt</span>&#123;</div><div class="line">  <span class="attribute">height</span>: <span class="number">36px</span>;</div><div class="line">  <span class="attribute">line-height</span>: <span class="number">36px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="11、布局错位问题"><a href="#11、布局错位问题" class="headerlink" title="11、布局错位问题:"></a>11、布局错位问题:</h4><p>a、没有清除浮动的清除浮动即可,如：<br><br>html:<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;div class="parent clear"&gt;</div><div class="line">  &lt;div class="child"&gt;child1&lt;/div&gt;</div><div class="line">  &lt;div class="child"&gt;child2&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure></p>
+<p>css:<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">.clear&#123;</div><div class="line">  overflow: hidden;</div><div class="line">  *zoom:1;</div><div class="line">&#125;</div><div class="line">.parent .child&#123;</div><div class="line">  float: left;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="12、css伪类问题："><a href="#12、css伪类问题：" class="headerlink" title="12、css伪类问题："></a>12、css伪类问题：</h4><p>将用伪类实现的效果换成其他实现方式；<br><br>主要是针对IE7内核，如果不用兼容IE7内核，则不用处理此类问题。</p>
+<h4 id="13、ul元素中li-两端顶头，间距均等问题"><a href="#13、ul元素中li-两端顶头，间距均等问题" class="headerlink" title="13、ul元素中li 两端顶头，间距均等问题"></a>13、ul元素中li 两端顶头，间距均等问题</h4><p>li使用float为left，加上margin-left,<br>然后ul同时也加上margin-left，其值使用与li相对应的负值,如：<br><br>html:<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;ul class="parent"&gt;</div><div class="line">  &lt;li class="child"&gt;测试&lt;/li&gt;</div><div class="line">  &lt;li class="child"&gt;测试&lt;/li&gt;</div><div class="line">  &lt;li class="child"&gt;测试&lt;/li&gt;</div><div class="line">  &lt;li class="child"&gt;测试&lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div></pre></td></tr></table></figure></p>
+<p>css:<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">.parent&#123;</div><div class="line">  width 1200px;</div><div class="line">  margin-left: -20px;</div><div class="line">  *zoom:1;</div><div class="line">&#125;</div><div class="line">.parent .child&#123;</div><div class="line">  width 280px;</div><div class="line">  height:400px;</div><div class="line">  margin-left: 20px;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="14、background-size-cover"><a href="#14、background-size-cover" class="headerlink" title="14、background-size: cover"></a>14、background-size: cover</h4><p>如果你想使用background-size: cover设置全屏背景， <br><br>很遗憾IE8办不到…但可以使用IE独有的AlphaImageLoader滤镜来实现，添加一条如下的CSS样式： <br><br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box</span>&#123;</div><div class="line">   <span class="attribute">background-size</span>: cover;</div><div class="line">   <span class="attribute">filter</span>: progid:DXImageTransform.Microsoft.<span class="built_in">AlphaImageLoader</span>(sizingMethod=scale , src=<span class="string">'image.img'</span>)\<span class="number">9</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>将sizingMethod设置为scale，src设置成背景图片地址就OK了。<br><br>还没完，如果你在此背景之上放置了链接，那这个链接是无法点击的。<br><br>一般情况下的解决办法是为链接或按钮添加position:relative使其相对浮动。</p>
+<h4 id="15、last-child"><a href="#15、last-child" class="headerlink" title="15、last-child"></a>15、last-child</h4><p>first-child是CSS2的内容，但是last-child就不是了，所以IE8不买账。<br><br>推荐的做法不是使用last-child，而是给最后一个元素设置一个.last的class，然后对此进行样式设置，这样就全部兼容了。</p>
+<h4 id="16、Media-Query-媒体查询"><a href="#16、Media-Query-媒体查询" class="headerlink" title="16、Media Query(媒体查询)"></a>16、Media Query(媒体查询)</h4><p>IE8似乎无法识别Media Query，所以需要hack一下啦！推荐采用Respond.js解决此问题。<br><br>Respond.js让IE6-8支持CSS3 Media Query。<br><br>Bootstrap里面就引入了这个js文件，从名字看出来是自适应的兼容。<br><br>使用：考虑到IE9是支持CSS3的，所以直接在HTML页面的head标签中添加脚本引用即可：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!--[if lt IE 9]&gt;</span></div><div class="line">  &lt;script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"&gt;&lt;/script&gt;</div><div class="line">&lt;![endif]—&gt;</div></pre></td></tr></table></figure></p>
+<p>官方demo地址：<a href="http://scottjehl.github.com/Respond/test/test.html" target="_blank" rel="external">http://scottjehl.github.com/Respond/test/test.html</a></p>
+<p>a.在css中正常用 min/max-width media <br><br>b.引入respond.min.js，但要在css的后面 <br><br>（越早引入越好，在ie下面看到页面闪屏的概率就越低，因为最初css会先渲染出来，如果respond.js加载得很后面，这时重新根据media query解析出来的css会再改变一次页面的布局等，所以看起来有闪屏的现象）</p>
+<h4 id="17、关于max-width"><a href="#17、关于max-width" class="headerlink" title="17、关于max-width"></a>17、关于max-width</h4><p>a. td中的max-width <br><br>如果针对td中的img元素设置max-width: 100%，在IE和Firefox你会发现不奏效，而在Chrome中却是可以的。<br><br>经查询发现需要给table设置table-layout: fixed.</p>
+<p>b. 嵌套标签中的max-width <br><br>如下的HTML结构：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"work-item"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span> <span class="attr">class</span>=<span class="string">"work-link"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"sample.jpg"</span> <span class="attr">class</span>=<span class="string">"work-image img-responsive"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>最外层元素.work-item设置了固定宽度，但是对img设置max-width为100%却无效.<br><br>后来才发现需要再对a标签设置width: 100%，这样才能使最内层的img标签充满整个div。</p>
+<h4 id="18、嵌套inline-block下padding元素重叠"><a href="#18、嵌套inline-block下padding元素重叠" class="headerlink" title="18、嵌套inline-block下padding元素重叠"></a>18、嵌套inline-block下padding元素重叠</h4><p>html:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></div><div class="line">   <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span>&gt;</span>1<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">   <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span>&gt;</span>2<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">   <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span>&gt;</span>3<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>CSS：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">ul</span> <span class="selector-tag">li</span>&#123;</div><div class="line">   <span class="attribute">display</span>: inline-block;</div><div class="line">&#125;</div><div class="line"><span class="selector-tag">ul</span> <span class="selector-tag">li</span> <span class="selector-tag">a</span>&#123;</div><div class="line">   <span class="attribute">display</span>: inline-block;</div><div class="line">   <span class="attribute">padding</span>: <span class="number">10px</span> <span class="number">15px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>按理来说a标签之间的距离应该是30px，但在IE8中出现了重叠，只有15px。<br><br>我的解决方法是使用float: left替代display: inline-block实现水平布局。</p>
+<h4 id="19、filter-blur"><a href="#19、filter-blur" class="headerlink" title="19、filter blur"></a>19、filter blur</h4><p>CSS3中提供支持滤镜效果的属性filter，比如支持高斯模糊效果：<br><br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">filter</span>: <span class="selector-tag">blur</span>(10<span class="selector-tag">px</span>);</div><div class="line"><span class="selector-tag">-webkit-filter</span>: <span class="selector-tag">blur</span>(10<span class="selector-tag">px</span>);</div><div class="line"><span class="selector-tag">-moz-filter</span>: <span class="selector-tag">blur</span>(10<span class="selector-tag">px</span>);</div></pre></td></tr></table></figure></p>
+<p>IE8对filter: blur(10px)的显示效果是对HTML元素进行小范围的模糊处理，这个效果并不是高斯模糊<br><br>要想支持高斯模糊，需要如下设置：<br><br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius='10');</div></pre></td></tr></table></figure></p>
+<p>在实践中发现一个坑就是，所有position: relative的元素都不会生效。<br><br>其他的发现是，IE9对filter: blur(10px)无效，<br><br>而对filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=’10’),是针对元素小范围的模糊效果。</p>
+<h3 id="sect-参考"><a href="#sect-参考" class="headerlink" title="&sect; 参考"></a><a name="reference">&sect; 参考</a></h3><ul>
+<li><a href="https://www.npmjs.com/" target="_blank" rel="external">npmjs</a></li>
+<li><a href="http://www.gulpjs.com.cn/" target="_blank" rel="external">gulpjs</a></li>
+<li><a href="https://babeljs.cn/" target="_blank" rel="external">babel</a></li>
+</ul>
+
+      
+    </div>
+    
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------���Ľ���<i class="fa fa-paw"></i>��л�����Ķ�-------------</div>
+    
+</div>
+      
+    </div>
+    
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/03/获取开始时间和结束时间/" rel="next" title="获取一周内，一月内，一年内的开始时间和结束时间">
+                <i class="fa fa-chevron-left"></i> 获取一周内，一月内，一年内的开始时间和结束时间
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/04/03/判断浏览器/" rel="prev" title="判断浏览器版本">
+                判断浏览器版本 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.png"
+               alt="邵金东" />
+          <p class="site-author-name" itemprop="name">邵金东</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#项目目录结构"><span class="nav-number">1.</span> <span class="nav-text">项目目录结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IE低版本兼容小贴士"><span class="nav-number">2.</span> <span class="nav-text">IE低版本兼容小贴士</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#IE浏览器hack"><span class="nav-number">2.1.</span> <span class="nav-text">IE浏览器hack</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1、IE8及以下，布局问题"><span class="nav-number">2.2.</span> <span class="nav-text">1、IE8及以下，布局问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、ie下进行跨域请求解决方案"><span class="nav-number">2.3.</span> <span class="nav-text">2、ie下进行跨域请求解决方案</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、ie8-9-进行跨域post请求，参数无法传递解决办法"><span class="nav-number">2.4.</span> <span class="nav-text">3、ie8,9 进行跨域post请求，参数无法传递解决办法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、IE6-IE7下overflow：hidden无效"><span class="nav-number">2.5.</span> <span class="nav-text">4、IE6,IE7下overflow：hidden无效</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5、css3选择器兼容问题？"><span class="nav-number">2.6.</span> <span class="nav-text">5、css3选择器兼容问题？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6、兼容IE8不直接使用sessionStorage-localStorage"><span class="nav-number">2.7.</span> <span class="nav-text">6、兼容IE8不直接使用sessionStorage,localStorage</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7、“JSON”未定义"><span class="nav-number">2.8.</span> <span class="nav-text">7、“JSON”未定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8、IE跨域下出现-“readyState”-0-”status”-0-”TypeError”…"><span class="nav-number">2.9.</span> <span class="nav-text">8、IE跨域下出现{“readyState”:0,”status”:0,”TypeError”…}</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9、透明度兼容性："><span class="nav-number">2.10.</span> <span class="nav-text">9、透明度兼容性：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10、输入框垂直居中问题"><span class="nav-number">2.11.</span> <span class="nav-text">10、输入框垂直居中问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#11、布局错位问题"><span class="nav-number">2.12.</span> <span class="nav-text">11、布局错位问题:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#12、css伪类问题："><span class="nav-number">2.13.</span> <span class="nav-text">12、css伪类问题：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#13、ul元素中li-两端顶头，间距均等问题"><span class="nav-number">2.14.</span> <span class="nav-text">13、ul元素中li 两端顶头，间距均等问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#14、background-size-cover"><span class="nav-number">2.15.</span> <span class="nav-text">14、background-size: cover</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#15、last-child"><span class="nav-number">2.16.</span> <span class="nav-text">15、last-child</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#16、Media-Query-媒体查询"><span class="nav-number">2.17.</span> <span class="nav-text">16、Media Query(媒体查询)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#17、关于max-width"><span class="nav-number">2.18.</span> <span class="nav-text">17、关于max-width</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#18、嵌套inline-block下padding元素重叠"><span class="nav-number">2.19.</span> <span class="nav-text">18、嵌套inline-block下padding元素重叠</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#19、filter-blur"><span class="nav-number">2.20.</span> <span class="nav-text">19、filter blur</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sect-参考"><span class="nav-number">3.</span> <span class="nav-text">§ 参考</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">邵金东</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_pv">
+  本站访客数:<span id="busuanzi_value_site_pv"></span>
+</span>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+  
+</body>
+</html>
+<!-- ҳ������С���� -->
+<script type="text/javascript" src="/js/src/love.js"></script>
