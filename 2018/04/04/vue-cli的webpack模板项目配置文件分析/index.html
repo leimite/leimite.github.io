@@ -95,16 +95,16 @@
 
 
 
-<meta name="description" content="vue-cli的webpack模板项目配置文件分析标签： webpack 配置 vue-cli 结构 开发构建date: 2018-04-04tags: 目录(?)[-] 一文件结构二指令分析三build文件夹分析builddev-serverjsbuildwebpackbaseconfjsbuildwebpackdevconfjsbuildutilsjsbuildvue-loaderconfjs">
+<meta name="description" content="目录(?)[-] 一文件结构二指令分析三build文件夹分析builddev-serverjsbuildwebpackbaseconfjsbuildwebpackdevconfjsbuildutilsjsbuildvue-loaderconfjsbuilddev-clientjsbuildbuildjsbuildwebpackprodconfjsbuildcheck-versionsjs四conf">
 <meta property="og:type" content="article">
-<meta property="og:title" content="邵金东的个人博客">
+<meta property="og:title" content="vue-cli的webpack模板项目配置文件分析">
 <meta property="og:url" content="http://yoursite.com/2018/04/04/vue-cli的webpack模板项目配置文件分析/index.html">
 <meta property="og:site_name" content="邵金东的个人博客">
-<meta property="og:description" content="vue-cli的webpack模板项目配置文件分析标签： webpack 配置 vue-cli 结构 开发构建date: 2018-04-04tags: 目录(?)[-] 一文件结构二指令分析三build文件夹分析builddev-serverjsbuildwebpackbaseconfjsbuildwebpackdevconfjsbuildutilsjsbuildvue-loaderconfjs">
-<meta property="og:updated_time" content="2018-04-04T01:45:59.691Z">
+<meta property="og:description" content="目录(?)[-] 一文件结构二指令分析三build文件夹分析builddev-serverjsbuildwebpackbaseconfjsbuildwebpackdevconfjsbuildutilsjsbuildvue-loaderconfjsbuilddev-clientjsbuildbuildjsbuildwebpackprodconfjsbuildcheck-versionsjs四conf">
+<meta property="og:updated_time" content="2018-04-04T01:59:58.389Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="邵金东的个人博客">
-<meta name="twitter:description" content="vue-cli的webpack模板项目配置文件分析标签： webpack 配置 vue-cli 结构 开发构建date: 2018-04-04tags: 目录(?)[-] 一文件结构二指令分析三build文件夹分析builddev-serverjsbuildwebpackbaseconfjsbuildwebpackdevconfjsbuildutilsjsbuildvue-loaderconfjs">
+<meta name="twitter:title" content="vue-cli的webpack模板项目配置文件分析">
+<meta name="twitter:description" content="目录(?)[-] 一文件结构二指令分析三build文件夹分析builddev-serverjsbuildwebpackbaseconfjsbuildwebpackdevconfjsbuildutilsjsbuildvue-loaderconfjsbuilddev-clientjsbuildbuildjsbuildwebpackprodconfjsbuildcheck-versionsjs四conf">
 
 
 
@@ -138,7 +138,7 @@
 
 
 
-  <title> | 邵金东的个人博客</title>
+  <title>vue-cli的webpack模板项目配置文件分析 | 邵金东的个人博客</title>
   
 
 
@@ -264,7 +264,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline"></h1>
+          <h1 class="post-title" itemprop="name headline">vue-cli的webpack模板项目配置文件分析</h1>
         
 
         <div class="post-meta">
@@ -276,7 +276,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-04T09:11:26+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-04T00:00:00+08:00">
                 2018-04-04
               </time>
             
@@ -311,8 +311,7 @@
       
 
       
-        <h2 id="vue-cli的webpack模板项目配置文件分析"><a href="#vue-cli的webpack模板项目配置文件分析" class="headerlink" title="vue-cli的webpack模板项目配置文件分析"></a>vue-cli的webpack模板项目配置文件分析</h2><p>标签： webpack 配置 vue-cli 结构 开发构建<br>date: 2018-04-04<br>tags:</p>
-<p>目录(?)[-]</p>
+        <p>目录(?)[-]</p>
 <p>一文件结构<br>二指令分析<br>三build文件夹分析<br>builddev-serverjs<br>buildwebpackbaseconfjs<br>buildwebpackdevconfjs<br>buildutilsjs<br>buildvue-loaderconfjs<br>builddev-clientjs<br>buildbuildjs<br>buildwebpackprodconfjs<br>buildcheck-versionsjs<br>四config文件夹分析<br>configindexjs<br>configdevenvjsconfigprodenvjs和configtestenvjs<br>五总结<br>2017-09-11更新：更新到webpack 2.6.1所对应的配置，完善部分代码注释。</p>
 <p>由于最近在vue-cli生成的webpack模板项目的基础上写一个小东西，开发过程中需要改动到build和config里面一些相关的配置，所以刚好趁此机会将所有配置文件看一遍，理一理思路，也便于以后修改配置的时候不会“太折腾”。</p>
 <p>###一、文件结构<br>本文主要分析开发（dev）和构建（build）两个过程涉及到的文件，故下面文件结构仅列出相应的内容。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">├─build</div><div class="line">│   ├─build.js</div><div class="line">│   ├─check-versions.js</div><div class="line">│   ├─dev-client.js</div><div class="line">│   ├─dev-server.js</div><div class="line">│   ├─utils.js</div><div class="line">│   ├─vue-loader.conf.js</div><div class="line">│   ├─webpack.base.conf.js</div><div class="line">│   ├─webpack.dev.conf.js</div><div class="line">│   ├─webpack.prod.conf.js</div><div class="line">│   └─webpack.test.conf.js</div><div class="line">├─config</div><div class="line">│   ├─dev.env.js</div><div class="line">│   ├─index.js</div><div class="line">│   ├─prod.env.js</div><div class="line">│   └─test.env.js</div><div class="line">├─...</div><div class="line">└─package.json</div></pre></td></tr></table></figure></p>
@@ -445,17 +444,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.png"
@@ -506,22 +496,6 @@
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#vue-cli的webpack模板项目配置文件分析"><span class="nav-number">1.</span> <span class="nav-text">vue-cli的webpack模板项目配置文件分析</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
